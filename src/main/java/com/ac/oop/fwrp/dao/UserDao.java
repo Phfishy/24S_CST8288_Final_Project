@@ -75,7 +75,24 @@ public class UserDao {
                 }
             }
         }
+        return null;
+    }
 
+    public User getUserByEmailAndPassword(String email, String password) throws SQLException {
+        String sql = "SELECT * FROM user WHERE email = ? and password = ?";
+
+        try (Connection conn = DatabaseConnection.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setString(1, email);
+            pstmt.setString(2, password);
+
+            try (ResultSet rs = pstmt.executeQuery()) {
+                if (rs.next()) {
+                    return extractUserFromResultSet(rs);
+                }
+            }
+        }
         return null;
     }
 

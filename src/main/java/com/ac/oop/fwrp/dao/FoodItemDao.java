@@ -114,8 +114,8 @@ public class FoodItemDao {
             pstmt.setBigDecimal(5, item.getPrice());
             pstmt.setBigDecimal(6, item.getDiscountedPrice());
             pstmt.setTimestamp(7, new Timestamp(item.getExpirationDate().getTime()));
-            pstmt.setBoolean(8, item.isSurplus());
-            pstmt.setBoolean(9, item.isForDonation());
+            pstmt.setBoolean(8, item.getSurplus());
+            pstmt.setBoolean(9, item.getForDonation());
             pstmt.setLong(10, item.getId());
 
             int affectedRows = pstmt.executeUpdate();
