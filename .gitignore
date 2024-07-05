@@ -1,0 +1,39 @@
+# Compiled class files
+target/
+*.class
+
+# Logs
+*.log
+
+# Maven specific files
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
+# Eclipse specific files
+*.classpath
+*.project
+*.settings/
+
+# IDEA specific files
+.idea/
+*.iml
+*.iws
+
+# NetBeans specific files
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Other
+*~
+*.swp
