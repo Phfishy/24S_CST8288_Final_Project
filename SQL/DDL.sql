@@ -26,8 +26,8 @@ CREATE TABLE `food_item` (
                              `expiration_date` datetime DEFAULT NULL,
                              `is_surplus` tinyint(1) NOT NULL DEFAULT '0',
                              `is_for_donation` tinyint(1) NOT NULL DEFAULT '0',
-                             `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-                             `last_updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+                             `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                             `updatedAt` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
                              PRIMARY KEY (`id`),
                              KEY `food_item_user_FK` (`retailer_id`),
                              CONSTRAINT `food_item_user_FK` FOREIGN KEY (`retailer_id`) REFERENCES `user` (`id`)

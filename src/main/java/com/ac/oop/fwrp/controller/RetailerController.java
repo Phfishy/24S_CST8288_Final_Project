@@ -1,6 +1,19 @@
 package com.ac.oop.fwrp.controller;
-@WebServlet("/food-item/*")
-public class RetailerController extends HttpServlet{
+
+import com.ac.oop.fwrp.model.FoodItem;
+import com.ac.oop.fwrp.service.FoodItemService;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
+
+@WebServlet("/retailer*")
+public class RetailerController extends HttpServlet {
     private FoodItemService foodItemService = new FoodItemService();
 
     @Override

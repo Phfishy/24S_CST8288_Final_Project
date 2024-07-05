@@ -14,14 +14,14 @@ public class FoodItemService {
         return foodItemDao.createFoodItem(item);
     }
 
-    public void updateSurplusStatus(Long itemId) throws SQLException {
-        FoodItem item = foodItemDao.getFoodItemById(itemId);
-        if (item != null) {
-            Date oneWeekFromNow = new Date(System.currentTimeMillis() + 7 * 24 * 60 * 60 * 1000);
-            if (item.getExpirationDate().before(oneWeekFromNow)) {
-                item.setSurplus(true);
-                foodItemDao.updateFoodItem(item);
-            }
-        }
-    }
+//    public void updateSurplusStatus(Long itemId) throws SQLException {
+//        FoodItem item = foodItemDao.getFoodItemById(itemId);
+//        if (item != null) {
+//            Date oneWeekFromNow = new Date(System.currentTimeMillis() + 7 * 24 * 60 * 60 * 1000);
+//            if (item.getExpirationDate().before(oneWeekFromNow)) {
+//                item.setSurplus(true);
+//                foodItemDao.updateFoodItem(item);
+//            }
+//        }
+//    }
 }

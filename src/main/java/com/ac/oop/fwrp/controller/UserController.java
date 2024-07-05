@@ -1,9 +1,17 @@
 package com.ac.oop.fwrp.controller;
 
+import com.ac.oop.fwrp.model.User;
 import com.ac.oop.fwrp.service.UserService;
 
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
 @WebServlet("/user")
-public class UserController extends HttpServlet{
+public class UserController extends HttpServlet {
     private UserService userService = new UserService();
 
     @Override

@@ -5,7 +5,9 @@ import java.util.Date;
 
 public class FoodItem {
     private Long id;
+
     private Long retailerId;
+
     private String name;
 
     private String description;
@@ -21,6 +23,10 @@ public class FoodItem {
     private Boolean isSurplus;
 
     private Boolean isForDonation;
+
+    private Date createdAt;
+
+    private Date updatedAt;
 
     public Long getId() {
         return id;
@@ -100,5 +106,21 @@ public class FoodItem {
 
     public void setForDonation(Boolean forDonation) {
         isForDonation = forDonation;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Date getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(Date updatedAt) {
+        this.updatedAt = updatedAt;
     }
 }
