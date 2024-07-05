@@ -11,4 +11,8 @@ public class UserService {
     public User registerUser(User user) throws SQLException {
         return userDao.createUser(user);
     }
+
+    public User loginUser(String email, String password) throws SQLException {
+        return userDao.getUserByEmailAndPassword(email, password);
+    }
 }

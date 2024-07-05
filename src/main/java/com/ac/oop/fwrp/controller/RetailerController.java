@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 
-@WebServlet("/retailer*")
+@WebServlet("/retailer/*")
 public class RetailerController extends HttpServlet {
     private FoodItemService foodItemService = new FoodItemService();
 
