@@ -40,6 +40,8 @@ public class UserController extends HttpServlet {
         user.setEmail(request.getParameter("email"));
         user.setType(Integer.parseInt(request.getParameter("type")));
         user.setPassword(request.getParameter("password"));
+        user.setAddress(request.getParameter("address"));
+        user.setContractNumber(request.getParameter("contractNumber"));
 
         try {
             User registeredUser = userService.registerUser(user);
