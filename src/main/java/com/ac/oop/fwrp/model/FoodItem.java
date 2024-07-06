@@ -92,19 +92,19 @@ public class FoodItem {
         this.expirationDate = expirationDate;
     }
 
-    public Boolean getSurplus() {
+    public Boolean getIsSurplus() {
         return isSurplus;
     }
 
-    public void setSurplus(Boolean surplus) {
+    public void setIsSurplus(Boolean surplus) {
         isSurplus = surplus;
     }
 
-    public Boolean getForDonation() {
+    public Boolean getIsForDonation() {
         return isForDonation;
     }
 
-    public void setForDonation(Boolean forDonation) {
+    public void setIsForDonation(Boolean forDonation) {
         isForDonation = forDonation;
     }
 
