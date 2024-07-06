@@ -23,8 +23,8 @@ public class FoodItemDao {
             pstmt.setBigDecimal(5, item.getPrice());
             pstmt.setBigDecimal(6, item.getDiscountedPrice());
             pstmt.setTimestamp(7, new Timestamp(item.getExpirationDate().getTime()));
-            pstmt.setBoolean(8, item.getSurplus());
-            pstmt.setBoolean(9, item.getForDonation());
+            pstmt.setBoolean(8, item.getIsSurplus());
+            pstmt.setBoolean(9, item.getIsForDonation());
 
             int affectedRows = pstmt.executeUpdate();
 
@@ -114,8 +114,8 @@ public class FoodItemDao {
             pstmt.setBigDecimal(5, item.getPrice());
             pstmt.setBigDecimal(6, item.getDiscountedPrice());
             pstmt.setTimestamp(7, new Timestamp(item.getExpirationDate().getTime()));
-            pstmt.setBoolean(8, item.getSurplus());
-            pstmt.setBoolean(9, item.getForDonation());
+            pstmt.setBoolean(8, item.getIsSurplus());
+            pstmt.setBoolean(9, item.getIsForDonation());
             pstmt.setLong(10, item.getId());
 
             int affectedRows = pstmt.executeUpdate();
@@ -148,8 +148,8 @@ public class FoodItemDao {
         item.setPrice(rs.getBigDecimal("price"));
         item.setDiscountedPrice(rs.getBigDecimal("discounted_price"));
         item.setExpirationDate(rs.getTimestamp("expiration_date"));
-        item.setSurplus(rs.getBoolean("is_surplus"));
-        item.setForDonation(rs.getBoolean("is_for_donation"));
+        item.setIsSurplus(rs.getBoolean("is_surplus"));
+        item.setIsForDonation(rs.getBoolean("is_for_donation"));
         return item;
     }
 }

@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,7 +23,12 @@
     <input type="text" id="discountedPrice" name="discountedPrice" required><br>
     <label for="expirationDate">Expiration Date:</label>
     <input type="date" id="expirationDate" name="expirationDate" required><br>
+    <label for="isSurplus">Is Surplus:</label>
+    <input type="checkbox" id="isSurplus" name="isSurplus"><br>
+    <label for="isForDonation">Is For Donation:</label>
+    <input type="checkbox" id="isForDonation" name="isForDonation"><br>
     <input type="submit" value="Add Food Item">
+
 </form>
 </body>
 </html>
