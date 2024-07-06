@@ -19,14 +19,14 @@ The Food Waste Reduction Platform is a comprehensive solution aimed at addressin
 - Database: MySQL 8.0
 - Build Tool: Maven
 - Version Control: Git
-- Testing: JUnit, Cypress
+- Testing: JUnit
 
 ## Prerequisites
 
-- Java Development Kit (JDK) 17 or higher
+- Java Development Kit (JDK) 8 or higher
 - Maven 3.6 or higher
 - MySQL 8.0 
-- Node.js and npm (for Cypress testing)
+- Tomcat 9
 
 ## Setup and Installation
 
