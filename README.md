@@ -36,9 +36,8 @@ The Food Waste Reduction Platform is a comprehensive solution aimed at addressin
 - Create a MySQL database named `fwrp`
 - execute the DDL.sql under /SQL folder
 4. Build the project:
-  mvn clean install
   mvn clean package
-5. Run the application:
+5. Servlet Container:
   use Tomcat 9
 6. Access the application at `http://localhost:8080`
 
