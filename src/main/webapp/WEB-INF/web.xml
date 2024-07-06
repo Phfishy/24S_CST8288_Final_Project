@@ -7,9 +7,8 @@
     <display-name>Food Waste Reduction Platform</display-name>
 
 
-
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
-    <absolute-ordering />
+    <absolute-ordering/>
 </web-app>

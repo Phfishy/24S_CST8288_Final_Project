@@ -1,5 +1,3 @@
 package com.ac.oop.fwrp.dao;
 
-public class AlertDao {
-
-}
+public class AlertDao {}
