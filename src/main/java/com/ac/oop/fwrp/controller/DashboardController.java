@@ -3,6 +3,7 @@ package com.ac.oop.fwrp.controller;
 import com.ac.oop.fwrp.model.FoodItem;
 import com.ac.oop.fwrp.model.User;
 import com.ac.oop.fwrp.service.FoodItemService;
+import com.ac.oop.fwrp.service.SubscriptionService;
 import com.ac.oop.fwrp.service.UserService;
 import java.io.IOException;
 import java.sql.SQLException;
@@ -17,7 +18,7 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/dashboard")
 public class DashboardController extends HttpServlet {
   private FoodItemService foodItemService = new FoodItemService();
-  private UserService userService = new UserService();
+  private SubscriptionService subscriptionService = new SubscriptionService();
 
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
@@ -37,9 +38,13 @@ public class DashboardController extends HttpServlet {
           break;
         case 10: // Charitable Organization
           foodItems = foodItemService.getAvailableDonations();
+          boolean orgHasSubscription = subscriptionService.hasSubscription(user.getId());
+          request.setAttribute("hasSubscription", orgHasSubscription);
           break;
         default: // 1 - Consumer
           foodItems = foodItemService.getDiscountedItems();
+          boolean customerHasSubscription = subscriptionService.hasSubscription(user.getId());
+          request.setAttribute("hasSubscription", customerHasSubscription);
           break;
       }
       request.setAttribute("foodItems", foodItems);

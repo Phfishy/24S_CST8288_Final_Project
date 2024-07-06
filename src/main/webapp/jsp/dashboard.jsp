@@ -86,5 +86,17 @@
 <c:if test="${userType == 5}">
     <a href="${pageContext.request.contextPath}/retailer/add">Add New Food Item</a>
 </c:if>
+
+<c:if test="${userType == 1 || userType == 10}">
+    <c:choose>
+        <c:when test="${hasSubscription}">
+            <p>You are subscribed to surplus food alerts.</p>
+        </c:when>
+        <c:otherwise>
+            <a href="${pageContext.request.contextPath}/subscription">Subscribe to Surplus Food Alerts</a>
+        </c:otherwise>
+    </c:choose>
+</c:if>
+
 </body>
 </html>
