@@ -36,4 +36,12 @@ public class FoodItemService {
   public List<FoodItem> getDiscountedItems() throws SQLException {
     return foodItemDao.getDiscountedFoodItems();
   }
+
+  public void deleteFoodItem(Long id) throws SQLException {
+    foodItemDao.deleteFoodItem(id);
+  }
+
+  public void markAsSurplus(Long id) {
+    foodItemDao.markAsSurplus(id);
+  }
 }

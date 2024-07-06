@@ -39,7 +39,7 @@ public class DashboardController extends HttpServlet {
         case 10: // Charitable Organization
           foodItems = foodItemService.getAvailableDonations();
           break;
-        default: // Consumer
+        default: // 1 - Consumer
           foodItems = foodItemService.getDiscountedItems();
           break;
       }
