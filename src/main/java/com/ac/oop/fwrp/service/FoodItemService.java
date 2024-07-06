@@ -24,4 +24,16 @@ public class FoodItemService {
     public void updateFoodItem(FoodItem item) throws SQLException {
         foodItemDao.updateFoodItem(item);
     }
+
+    public List<FoodItem> getFoodItemsByRetailerId(long retailerId) throws SQLException {
+        return foodItemDao.getFoodItemsByRetailerId(retailerId);
+    }
+
+    public List<FoodItem> getAvailableDonations() throws SQLException {
+        return foodItemDao.getFoodItemsByDonationStatus(true);
+    }
+
+    public List<FoodItem> getDiscountedItems() throws SQLException {
+        return foodItemDao.getDiscountedFoodItems();
+    }
 }

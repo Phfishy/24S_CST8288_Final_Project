@@ -137,6 +137,16 @@ public class FoodItemDao {
         }
     }
 
+    public List<FoodItem> getFoodItemsByDonationStatus(boolean isForDonation) throws SQLException {
+        //TODO  Implementation
+        return null;
+    }
+
+    public List<FoodItem> getDiscountedFoodItems() throws SQLException {
+        //TODO  Implementation
+        return null;
+    }
+
     // Helper method to extract a FoodItem object from a ResultSet
     private FoodItem extractFoodItemFromResultSet(ResultSet rs) throws SQLException {
         FoodItem item = new FoodItem();

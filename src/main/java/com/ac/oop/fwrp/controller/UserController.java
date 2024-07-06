@@ -46,7 +46,7 @@ public class UserController extends HttpServlet {
         try {
             User registeredUser = userService.registerUser(user);
             request.setAttribute("user", registeredUser);
-            request.getRequestDispatcher("/jsp/registration-success.jsp").forward(request, response);
+            request.getRequestDispatcher("/jsp/login.jsp").forward(request, response);
         } catch (Exception e) {
             request.setAttribute("error", e.getMessage());
             request.getRequestDispatcher("/jsp/error.jsp").forward(request, response);
@@ -61,8 +61,8 @@ public class UserController extends HttpServlet {
             User user = userService.loginUser(email, password);
             if (user != null) {
                 HttpSession session = request.getSession();
-                session.setAttribute("user", user.getId());
-                response.sendRedirect(request.getContextPath() + "/dashboard");
+                session.setAttribute("user", user);
+                response.sendRedirect(request.getContextPath() + "/retailer/list");
             } else {
                 request.setAttribute("error", "Invalid email or password");
                 request.getRequestDispatcher("/jsp/login.jsp").forward(request, response);
