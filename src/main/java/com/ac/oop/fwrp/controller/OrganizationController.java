@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
-@WebServlet("/organization")
-public class OrganizationController extends HttpServlet{
-    private FoodItemService foodItemService = new FoodItemService();
 
+@WebServlet("/organization")
+public class OrganizationController extends HttpServlet {
+  private FoodItemService foodItemService = new FoodItemService();
 }

@@ -14,6 +14,5 @@ import java.text.SimpleDateFormat;
 
 @WebServlet("/consumer")
 public class ConsumerController extends HttpServlet {
-    private FoodItemService foodItemService = new FoodItemService();
-
+  private FoodItemService foodItemService = new FoodItemService();
 }

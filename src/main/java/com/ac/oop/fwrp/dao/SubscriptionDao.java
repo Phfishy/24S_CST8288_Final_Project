@@ -6,5 +6,5 @@ import com.ac.oop.fwrp.util.DatabaseConnection;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-public class SubscriptionDao {
-}
+
+public class SubscriptionDao {}

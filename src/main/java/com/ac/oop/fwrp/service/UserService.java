@@ -6,13 +6,13 @@ import com.ac.oop.fwrp.model.User;
 import java.sql.SQLException;
 
 public class UserService {
-    private UserDao userDao = new UserDao();
+  private UserDao userDao = new UserDao();
 
-    public User registerUser(User user) throws SQLException {
-        return userDao.createUser(user);
-    }
+  public User registerUser(User user) throws SQLException {
+    return userDao.createUser(user);
+  }
 
-    public User loginUser(String email, String password) throws SQLException {
-        return userDao.getUserByEmailAndPassword(email, password);
-    }
+  public User loginUser(String email, String password) throws SQLException {
+    return userDao.getUserByEmailAndPassword(email, password);
+  }
 }

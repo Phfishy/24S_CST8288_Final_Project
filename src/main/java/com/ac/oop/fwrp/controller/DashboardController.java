@@ -17,37 +17,38 @@ import java.util.List;
 
 @WebServlet("/dashboard")
 public class DashboardController extends HttpServlet {
-    private FoodItemService foodItemService = new FoodItemService();
-    private UserService userService = new UserService();
+  private FoodItemService foodItemService = new FoodItemService();
+  private UserService userService = new UserService();
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HttpSession session = request.getSession(false);
-        if (session == null || session.getAttribute("user") == null) {
-            response.sendRedirect(request.getContextPath() + "/login");
-            return;
-        }
-
-        User user = (User) session.getAttribute("user");
-        List<FoodItem> foodItems;
-
-        try {
-            switch (user.getType()) {
-                case 5: // Retailer
-                    foodItems = foodItemService.getFoodItemsByRetailerId(user.getId());
-                    break;
-                case 10: // Charitable Organization
-                    foodItems = foodItemService.getAvailableDonations();
-                    break;
-                default: // Consumer
-                    foodItems = foodItemService.getDiscountedItems();
-                    break;
-            }
-            request.setAttribute("foodItems", foodItems);
-            request.setAttribute("userType", user.getType());
-        } catch (SQLException e) {
-            request.setAttribute("error", "Error fetching food items: " + e.getMessage());
-        }
-
-        request.getRequestDispatcher("/jsp/dashboard.jsp").forward(request, response);
+  protected void doGet(HttpServletRequest request, HttpServletResponse response)
+      throws ServletException, IOException {
+    HttpSession session = request.getSession(false);
+    if (session == null || session.getAttribute("user") == null) {
+      response.sendRedirect(request.getContextPath() + "/login");
+      return;
     }
+
+    User user = (User) session.getAttribute("user");
+    List<FoodItem> foodItems;
+
+    try {
+      switch (user.getType()) {
+        case 5: // Retailer
+          foodItems = foodItemService.getFoodItemsByRetailerId(user.getId());
+          break;
+        case 10: // Charitable Organization
+          foodItems = foodItemService.getAvailableDonations();
+          break;
+        default: // Consumer
+          foodItems = foodItemService.getDiscountedItems();
+          break;
+      }
+      request.setAttribute("foodItems", foodItems);
+      request.setAttribute("userType", user.getType());
+    } catch (SQLException e) {
+      request.setAttribute("error", "Error fetching food items: " + e.getMessage());
+    }
+
+    request.getRequestDispatcher("/jsp/dashboard.jsp").forward(request, response);
+  }
 }
