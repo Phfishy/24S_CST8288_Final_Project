@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
@@ -57,15 +57,19 @@
                 <c:when test="${userType == 5}">
                     <td>
                         <a href="${pageContext.request.contextPath}/retailer/update?id=${foodItem.id}">Edit</a>
-                        <a href="${pageContext.request.contextPath}/retailer/delete?id=${foodItem.id}">Delete </a>
+                        <a href="#"
+                           onclick="postForm('${pageContext.request.contextPath}/retailer/delete?id=${foodItem.id}')">Delete</a>
                         <c:if test="${!foodItem.isSurplus}">
-                            <a href="#" onclick="postForm('${pageContext.request.contextPath}/retailer/markAsSurplus?id=${foodItem.id}')">Mark as Surplus</a>
+                            <a href="#"
+                               onclick="postForm('${pageContext.request.contextPath}/retailer/markAsSurplus?id=${foodItem.id}')">Mark
+                                as Surplus</a>
                         </c:if>
                     </td>
                 </c:when>
                 <c:when test="${userType == 10}">
                     <td>
-                        <a href="${pageContext.request.contextPath}/organization/claim?id=${foodItem.id}">Claim for Donation</a>
+                        <a href="${pageContext.request.contextPath}/organization/claim?id=${foodItem.id}">Claim for
+                            Donation</a>
                     </td>
                 </c:when>
                 <c:otherwise>

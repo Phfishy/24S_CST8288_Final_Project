@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
@@ -9,8 +9,9 @@
 </head>
 <body>
 <h1>An Error Occurred</h1>
-<% if(request.getAttribute("error") != null) { %>
-<p style="color: red;"><%= request.getAttribute("error") %></p>
+<% if (request.getAttribute("error") != null) { %>
+<p style="color: red;"><%= request.getAttribute("error") %>
+</p>
 <% } else { %>
 <p>An unexpected error occurred. Please try again later.</p>
 <% } %>

@@ -2,7 +2,6 @@ package com.ac.oop.fwrp.service;
 
 import com.ac.oop.fwrp.dao.FoodItemDao;
 import com.ac.oop.fwrp.model.FoodItem;
-
 import java.sql.SQLException;
 import java.util.List;
 
@@ -15,10 +14,6 @@ public class FoodItemService {
 
   public FoodItem getFoodItemById(Long id) throws SQLException {
     return foodItemDao.getFoodItemById(id);
-  }
-
-  public List<FoodItem> getAllFoodItems() throws SQLException {
-    return foodItemDao.getAllFoodItems();
   }
 
   public void updateFoodItem(FoodItem item) throws SQLException {

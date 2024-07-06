@@ -1,6 +1,7 @@
 package com.ac.oop.fwrp.controller;
 
 import com.ac.oop.fwrp.model.FoodItem;
+import com.ac.oop.fwrp.model.User;
 import com.ac.oop.fwrp.service.FoodItemService;
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -11,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet("/retailer/*")
 public class RetailerController extends HttpServlet {
@@ -33,7 +35,6 @@ public class RetailerController extends HttpServlet {
         }
         request.getRequestDispatcher("/jsp/foodItemUpdate.jsp").forward(request, response);
         break;
-
       case "/delete":
         Long foodItemId = Long.parseLong(request.getParameter("id"));
         try {
@@ -57,6 +58,7 @@ public class RetailerController extends HttpServlet {
     switch (action) {
       case "/add":
         addFoodItem(request, response);
+        response.sendRedirect(request.getContextPath() + "/dashboard");
         break;
       case "/update":
         try {
@@ -77,9 +79,9 @@ public class RetailerController extends HttpServlet {
         break;
       case "/markAsSurplus":
         Long foodItemId = Long.parseLong(request.getParameter("id"));
-          foodItemService.markAsSurplus(foodItemId);
-          response.sendRedirect(request.getContextPath() + "/dashboard");
-          break;
+        foodItemService.markAsSurplus(foodItemId);
+        response.sendRedirect(request.getContextPath() + "/dashboard");
+        break;
       default:
         response.sendError(HttpServletResponse.SC_NOT_FOUND);
         break;
@@ -98,7 +100,6 @@ public class RetailerController extends HttpServlet {
         item.setExpirationDate(dateFormat.parse(request.getParameter("expirationDate")));
         foodItemService.updateFoodItem(item);
         request.setAttribute("foodItem", item);
-        request.getRequestDispatcher("/jsp/dashboard.jsp").forward(request, response);
       } catch (Exception e) {
         request.setAttribute("error", e.getMessage());
         request.getRequestDispatcher("/jsp/error.jsp").forward(request, response);
@@ -111,6 +112,17 @@ public class RetailerController extends HttpServlet {
   private void addFoodItem(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
     FoodItem item = new FoodItem();
+    HttpSession session = request.getSession(false);
+    if (session == null || session.getAttribute("user") == null) {
+      response.sendRedirect(request.getContextPath() + "/login");
+      return;
+    }
+    User user = (User) session.getAttribute("user");
+    if (user.getType() != 5) {
+      response.sendRedirect(request.getContextPath() + "/dashboard");
+      return;
+    }
+    item.setRetailerId(user.getId());
     item.setRetailerId(Long.parseLong(request.getParameter("retailerId")));
     item.setName(request.getParameter("name"));
     item.setDescription(request.getParameter("description"));
@@ -125,7 +137,6 @@ public class RetailerController extends HttpServlet {
 
       FoodItem addedItem = foodItemService.addFoodItem(item);
       request.setAttribute("foodItem", addedItem);
-      request.getRequestDispatcher("/jsp/dashboard.jsp").forward(request, response);
     } catch (Exception e) {
       request.setAttribute("error", e.getMessage());
       request.getRequestDispatcher("/jsp/error.jsp").forward(request, response);

@@ -12,11 +12,10 @@
     <p>Description: ${foodItem.description}</p>
     <p>Price: ${foodItem.price}</p>
     <p>Discounted Price: ${foodItem.discountedPrice}</p>
-    <label for="expirationDate">Expiration Date:</label>
-    <input type="date" id="expirationDate" name="expirationDate" readonly><br>
+    <p>Max Quantity: ${foodItem.quantity}</p>
     <label for="quantity">Quantity:</label>
     <input type="number" id="quantity" name="quantity" min="1" max="${foodItem.quantity}" required>
-    <button type="submit" >Purchase</button>
+    <button type="submit">Purchase</button>
 </form>
 </body>
 </html>
