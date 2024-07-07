@@ -3,6 +3,7 @@
 <html>
 <head>
     <title>Claim Food Item</title>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/styles.css">
 </head>
 <body>
 <h1>Claim Food Item</h1>

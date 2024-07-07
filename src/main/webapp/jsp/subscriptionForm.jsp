@@ -4,6 +4,7 @@
 <html>
 <head>
     <title>Subscribe to Surplus Food Alerts</title>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/styles.css">
 </head>
 <body>
 <h1>Subscribe to Surplus Food Alerts</h1>

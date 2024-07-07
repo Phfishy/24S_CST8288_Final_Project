@@ -4,6 +4,7 @@
 <html>
 <head>
     <title>Dashboard - Food Waste Reduction Platform</title>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/styles.css">
     <script type="text/javascript">
         function postForm(url) {
             var form = document.createElement("form");

@@ -3,6 +3,7 @@
 <html>
 <head>
     <title>Purchase Food Item</title>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/styles.css">
 </head>
 <body>
 <h1>Purchase Food Item</h1>
