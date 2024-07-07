@@ -7,7 +7,7 @@ import java.util.List;
 
 public class FoodItemService {
   private final FoodItemDao foodItemDao = new FoodItemDao();
-
+  private final AlertService alertService = new AlertService();
   public FoodItem addFoodItem(FoodItem item) throws SQLException {
     return foodItemDao.createFoodItem(item);
   }
@@ -36,7 +36,10 @@ public class FoodItemService {
     foodItemDao.deleteFoodItem(id);
   }
 
-  public void markAsSurplus(Long id) {
+  public void markAsSurplus(Long id) throws SQLException {
     foodItemDao.markAsSurplus(id);
+    FoodItem foodItem = foodItemDao.getFoodItemById(id);
+    //trigger alerts for this newly marked surplus food item
+    alertService.sendAlertsForSurplusItem(foodItem);
   }
 }

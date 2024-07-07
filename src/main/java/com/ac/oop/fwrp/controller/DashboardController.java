@@ -38,13 +38,13 @@ public class DashboardController extends HttpServlet {
           break;
         case 10: // Charitable Organization
           foodItems = foodItemService.getAvailableDonations();
-          boolean orgHasSubscription = subscriptionService.hasSubscription(user.getId());
-          request.setAttribute("hasSubscription", orgHasSubscription);
+//          boolean orgHasSubscription = subscriptionService.hasSubscription(user.getId());
+//          request.setAttribute("hasSubscription", orgHasSubscription);
           break;
         default: // 1 - Consumer
           foodItems = foodItemService.getDiscountedItems();
-          boolean customerHasSubscription = subscriptionService.hasSubscription(user.getId());
-          request.setAttribute("hasSubscription", customerHasSubscription);
+//          boolean customerHasSubscription = subscriptionService.hasSubscription(user.getId());
+//          request.setAttribute("hasSubscription", customerHasSubscription);
           break;
       }
       request.setAttribute("foodItems", foodItems);

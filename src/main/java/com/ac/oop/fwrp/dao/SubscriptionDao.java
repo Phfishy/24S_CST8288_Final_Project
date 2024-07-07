@@ -16,8 +16,8 @@ public class SubscriptionDao {
             pstmt.setLong(1, subscription.getUserId());
             pstmt.setInt(2, subscription.getCommunicationMethod());
             pstmt.setString(3, subscription.getFoodPreferences());
-            pstmt.setDouble(5, subscription.getLatitude());
-            pstmt.setDouble(6, subscription.getLongitude());
+            pstmt.setDouble(4, subscription.getLatitude());
+            pstmt.setDouble(5, subscription.getLongitude());
             int affectedRows = pstmt.executeUpdate();
             if (affectedRows == 0) {
                 throw new SQLException("Creating subscription failed, no rows affected.");
