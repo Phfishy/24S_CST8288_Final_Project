@@ -1,4 +1,26 @@
 # Food Waste Reduction Platform
+### register
+![image](https://github.com/YangyangLi-can/24S_CST8288_Final_Project/assets/21339369/066cb9a9-763b-4053-89f9-f9e252b30431)
+### login
+![image](https://github.com/YangyangLi-can/24S_CST8288_Final_Project/assets/21339369/0502923a-c16e-402b-96ea-02a2620c8a82)
+### retailer food item dashboard 
+![image](https://github.com/YangyangLi-can/24S_CST8288_Final_Project/assets/21339369/9d09f197-46bd-4ab4-a858-f928cb216b0f)
+### retailer create food item
+![image](https://github.com/YangyangLi-can/24S_CST8288_Final_Project/assets/21339369/84a9c4a6-3ee6-4af1-a7d6-f4a36f437df1)
+### retailer update food item
+![image](https://github.com/YangyangLi-can/24S_CST8288_Final_Project/assets/21339369/ba86cadd-0de8-4ba6-9c7f-cfee948470e8)
+### customer food item dashboard
+![image](https://github.com/YangyangLi-can/24S_CST8288_Final_Project/assets/21339369/c4076a57-b39f-4882-be70-d9638fd41365)
+### customer puerchase food item on discount
+![image](https://github.com/YangyangLi-can/24S_CST8288_Final_Project/assets/21339369/b50125df-a8fa-4579-8846-b05348658289)
+### customer subscribe to surplus food alerts
+![image](https://github.com/YangyangLi-can/24S_CST8288_Final_Project/assets/21339369/72e432eb-7d01-4ac6-92ff-4ec70ec20ffd)
+### organization food item dashboard
+![image](https://github.com/YangyangLi-can/24S_CST8288_Final_Project/assets/21339369/2830400f-fde7-4c9f-942d-5633d61d472b)
+### organization claim food item
+![image](https://github.com/YangyangLi-can/24S_CST8288_Final_Project/assets/21339369/c6fe7a15-1969-45c1-80c2-16bde0b6ff96)
+### organization subscribe to surplus food alerts
+![image](https://github.com/YangyangLi-can/24S_CST8288_Final_Project/assets/21339369/66269e83-2bf7-4bd4-91d9-ceb481157815)
 
 ## Overview
 
