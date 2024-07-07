@@ -56,7 +56,7 @@ CREATE TABLE `order` (
 -- fwrp.subscription definition
 
 CREATE TABLE `subscription` (
-                                `id` bigint NOT NULL,
+                                `id` bigint NOT NULL AUTO_INCREMENT,
                                 `user_id` bigint NOT NULL,
                                 `communication_method` smallint unsigned DEFAULT NULL COMMENT '1-email, 2-phone',
                                 `food_preference` text,
@@ -66,13 +66,13 @@ CREATE TABLE `subscription` (
                                 PRIMARY KEY (`id`),
                                 KEY `subscription_user_FK` (`user_id`),
                                 CONSTRAINT `subscription_user_FK` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
 -- fwrp.alert definition
 
 CREATE TABLE `alert` (
-                         `id` bigint NOT NULL,
+                         `id` bigint NOT NULL AUTO_INCREMENT,
                          `user_id` bigint NOT NULL,
                          `item_id` bigint DEFAULT NULL,
                          `type` smallint unsigned NOT NULL DEFAULT '1' COMMENT '1-email, 2-phone',
@@ -82,4 +82,4 @@ CREATE TABLE `alert` (
                          KEY `alert_food_item_FK` (`item_id`),
                          CONSTRAINT `alert_food_item_FK` FOREIGN KEY (`item_id`) REFERENCES `food_item` (`id`),
                          CONSTRAINT `alert_user_FK` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
