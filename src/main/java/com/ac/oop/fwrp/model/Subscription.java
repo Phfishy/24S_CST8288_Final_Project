@@ -5,7 +5,7 @@ public class Subscription {
 
   private Long userId;
 
-  private String communicationMethod;
+  private Integer communicationMethod;
 
   private String foodPreferences;
 
@@ -31,11 +31,11 @@ public class Subscription {
     this.userId = userId;
   }
 
-  public String getCommunicationMethod() {
+  public Integer getCommunicationMethod() {
     return communicationMethod;
   }
 
-  public void setCommunicationMethod(String communicationMethod) {
+  public void setCommunicationMethod(Integer communicationMethod) {
     this.communicationMethod = communicationMethod;
   }
 

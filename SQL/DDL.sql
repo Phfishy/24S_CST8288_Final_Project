@@ -10,7 +10,7 @@ CREATE TABLE `user` (
                         `password` varchar(64) DEFAULT NULL,
                         PRIMARY KEY (`id`),
                         UNIQUE KEY `user_email_unique` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
 -- fwrp.food_item definition
@@ -21,17 +21,18 @@ CREATE TABLE `food_item` (
                              `name` varchar(64) NOT NULL,
                              `description` text NOT NULL,
                              `quantity` int unsigned NOT NULL,
-                             `price` decimal(10,2) NOT NULL,
-                             `discounted_price` decimal(10,2) NOT NULL,
+                             `price` decimal(10,0) NOT NULL,
+                             `discounted_price` decimal(10,0) DEFAULT NULL,
                              `expiration_date` datetime DEFAULT NULL,
                              `is_surplus` tinyint(1) NOT NULL DEFAULT '0',
                              `is_for_donation` tinyint(1) NOT NULL DEFAULT '0',
                              `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-                             `updatedAt` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+                             `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+                             `status` smallint unsigned NOT NULL DEFAULT '1' COMMENT '1-valid, 5-deleted',
                              PRIMARY KEY (`id`),
                              KEY `food_item_user_FK` (`retailer_id`),
                              CONSTRAINT `food_item_user_FK` FOREIGN KEY (`retailer_id`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
 -- fwrp.`order` definition
@@ -41,7 +42,7 @@ CREATE TABLE `order` (
                          `item_id` bigint NOT NULL,
                          `buyer_id` bigint NOT NULL,
                          `quantity` int unsigned NOT NULL,
-                         `checkout_time` datetime NOT NULL,
+                         `checkout_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
                          `transaction_type` smallint unsigned NOT NULL DEFAULT '1' COMMENT '1-purchase, 2-donation',
                          `status` smallint unsigned NOT NULL DEFAULT '0' COMMENT '0-initial, 5-checkout',
                          PRIMARY KEY (`id`),
@@ -49,13 +50,13 @@ CREATE TABLE `order` (
                          KEY `order_user_FK` (`buyer_id`),
                          CONSTRAINT `order_food_item_FK` FOREIGN KEY (`item_id`) REFERENCES `food_item` (`id`),
                          CONSTRAINT `order_user_FK` FOREIGN KEY (`buyer_id`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
 -- fwrp.subscription definition
 
 CREATE TABLE `subscription` (
-                                `id` bigint NOT NULL AUTO_INCREMENT,
+                                `id` bigint NOT NULL,
                                 `user_id` bigint NOT NULL,
                                 `communication_method` smallint unsigned DEFAULT NULL COMMENT '1-email, 2-phone',
                                 `food_preference` text,
@@ -71,7 +72,7 @@ CREATE TABLE `subscription` (
 -- fwrp.alert definition
 
 CREATE TABLE `alert` (
-                         `id` bigint NOT NULL AUTO_INCREMENT,
+                         `id` bigint NOT NULL,
                          `user_id` bigint NOT NULL,
                          `item_id` bigint DEFAULT NULL,
                          `type` smallint unsigned NOT NULL DEFAULT '1' COMMENT '1-email, 2-phone',

@@ -6,6 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Error - Food Waste Reduction Platform</title>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/styles.css">
 </head>
 <body>
 <h1>An Error Occurred</h1>

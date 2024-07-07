@@ -5,6 +5,7 @@
 <html>
 <head>
     <title>Delete Food Item</title>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/styles.css">
 </head>
 <body>
 <h1>Delete Food Item</h1>

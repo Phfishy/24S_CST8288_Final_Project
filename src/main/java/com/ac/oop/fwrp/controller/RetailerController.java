@@ -79,8 +79,12 @@ public class RetailerController extends HttpServlet {
         break;
       case "/markAsSurplus":
         Long foodItemId = Long.parseLong(request.getParameter("id"));
-        foodItemService.markAsSurplus(foodItemId);
-        response.sendRedirect(request.getContextPath() + "/dashboard");
+          try {
+              foodItemService.markAsSurplus(foodItemId);
+          } catch (SQLException e) {
+              throw new RuntimeException(e);
+          }
+          response.sendRedirect(request.getContextPath() + "/dashboard");
         break;
       default:
         response.sendError(HttpServletResponse.SC_NOT_FOUND);
