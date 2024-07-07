@@ -71,6 +71,7 @@ https://docs.google.com/document/d/1VAmqbzf8KjLdld_JqMUog4fVVvuHUrC3EsTj1KPETiA/
   **Develop and test your feature**:
     - After completing and testing your feature branch, create a pull request on GitHub.
       ![image](https://github.com/YangyangLi-can/24S_CST8288_Final_Project/assets/21339369/8816ce96-b486-406a-a8a1-72d0efa299e5)
+      ![image](https://github.com/YangyangLi-can/24S_CST8288_Final_Project/assets/21339369/5d7d0046-e048-457a-b6d6-3f3a9705becf)
     - Request a code review from other group members.
       ![image](https://github.com/YangyangLi-can/24S_CST8288_Final_Project/assets/21339369/ab786f87-50a3-4384-8de0-081c3561355a)
     - It's recommended to attach screenshots to prove you've fully tested your code and to assist the reviewer in understanding your changes.
